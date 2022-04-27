@@ -1,0 +1,93 @@
+{% extends "tracker/base.html" %}
+
+{% block add %}
+
+    <div class="banner-buttons">
+        {% if user.is_authenticated %}
+        <a href="{% url 'post-create' %}">
+            <button class="button-two"><span>Add item</span></button>
+        </a>
+        {% endif %}
+    </div>
+    <div class="login-logout-buttons">
+        {% if user.is_authenticated %}
+            <img class="user-home-photo" src=" {{ user.profile.image.url }} " alt="Your profile image.">
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+{% endblock add %}
+
+{% block content %}
+
+    <div class="modal-container" id="modal_container">
+
+        <div class="modal">
+            <h1>Add an item</h1>
+
+            <div id="modal-fields">
+                <div class="modal-field">
+                    <label for="modal_name">Enter a name for the item: </label>
+                    <input type="text" id="modal_name"
+                name="modalname">
+                </div>
+
+                <div class="modal-field">
+                    <label for="modal_due">Enter a description: </label>
+                    <input type="text" id="modal_description"
+                name="modaldue">
+                </div>
+
+                <div class="modal-field">
+                    <label for="modal_description">Enter a due date and time: </label>
+                    <input type="datetime-local" id="modal_due"
+                name="modaldescription">
+                </div>
+            </div>
+            
+
+            <button id="add">Add Item</button>
+            <button id="close">Cancel</button>
+        </div>
+
+    </div>
+
+    <div id="assignment_boxes">
+        {%for post in posts%}
+            <div class="assignment_container">
+                <div class="assignment">
+                    <h3><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
+                    <p>{{ post.description }}</p>
+                    <h4>{{ post.due_date }}</h4>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+        <div id="paginator-buttons">
+            {% if page_obj.has_previous %}
+                <a class="paginator-button" href="?page=1">First</a>
+                <a class="paginator-button" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="paginator-button" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-2' and num > page_obj.number|add:'2' %}
+                    <a class="paginator-button" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="paginator-button" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="paginator-button" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </div>
+
+    {% endif %}
+
+{% endblock content %}

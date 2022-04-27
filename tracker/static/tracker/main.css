@@ -1,0 +1,279 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+
+*{margin: 0px; padding: 0px}
+
+body    {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #EADEDA;
+    margin: 0px;
+}
+
+a {
+  color: #e04556;
+  text-decoration: none;
+}
+
+.nav-link {
+  margin: 10px;
+}
+
+#banner {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: #36393B;
+    margin: 0%;
+    padding: 15px 20px;
+}
+
+#main-title {
+    color: #DB504A;
+    font-family: Helvetica;
+    text-shadow: 1px 1px 1px #000;
+}
+
+
+/* Add assignment and Add professor buttons */
+
+.banner-buttons   {
+    width: 10%;
+    margin:0px;
+  }
+
+.button-two {
+    text-align: center;
+    cursor: pointer;
+    font-size:12px;
+    margin: 0 0 0 100px;
+    border-radius: 4px;
+    background-color:#e04556;
+    border: none;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: '+';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Modal container and modal divs*/
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px;
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.modal h1 {
+    margin: 0;
+}
+
+.modal p {
+    opacity: 0.7;
+}
+
+.modal-field {
+    margin: 10px;
+}
+
+/* Div that contains the assignment boxes */
+
+  #assignment_boxes   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.assignment     {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 40px;
+    margin-top: 30px;
+    height: 125px;
+    padding: 5px 5px;
+}
+
+.assignment_container {
+    flex: 0 0 33.333333%;
+}
+
+.user-home-photo {
+  max-width: 20px;
+  max-height: 20px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/*  Profile Page  */
+
+#profile-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px;
+}
+
+.image-large {
+  border-radius: 50%;
+}
+
+.profile-username {
+  color: #DB504A;
+}
+
+.profile-email {
+  color: #DB504A;
+}
+
+#div_id_username, #div_id_email, #div_id_image, #div_id_password, #div_id_password1, #div_id_password2 {
+  border: 1px solid #36393B;
+  border-radius: 5px;
+  background-color: #36393B;
+  width: 75%;
+  margin: 10px;
+  padding: 10px;
+}
+
+#div_id_username label, #div_id_email label, #div_id_image label, #div_id_password label, #div_id_password1 label, #div_id_password2 label {
+  color: #DB504A;
+}
+#div_id_username small, #div_id_email small, #div_id_image small, #div_id_password small, #div_id_password1 small, #div_id_password2 small {
+  color: white;
+}
+#div_id_image div {
+  color: white;
+}
+form .form-group .register-button {
+  margin-left: 45%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  cursor: pointer;
+  font-size:12px;
+  border-radius: 4px;
+  background-color:#DB504A;
+  border: none;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-width: 0px;
+}
+
+fieldset legend {
+  display: none;
+}
+
+/*  logout page   */
+
+#logout-container {
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/*  login page  */
+.register-login-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-space {
+  margin-top: 5%;
+}
+
+li {
+  margin-left: 15px;
+}
+
+#error_1_id_password2, #error_1_id_username {
+  color: red;
+}
+
+#edit-delete-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit-delete-buttons .button-two {
+  margin: 5px;
+}
+
+#paginator-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.paginator-button {
+  background-color: #36393B;
+  border-style: solid;
+  border-color: #e04556;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 2px;
+  padding: 5px;
+}

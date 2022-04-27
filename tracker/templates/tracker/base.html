@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if title %}
+        <title>Tracker Home - {{ title }}</title>
+    {% else %}
+        <title>Tracker Home</title>
+    {% endif %}
+
+    <meta name="description" content="A web application that I have built for my senior project.">
+    <meta name="author" content="Wyatt Stevens">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'tracker/main.css' %}">
+
+</head>
+
+<body>
+
+    <div id="banner">
+
+        <h1 id="main-title"><a href="{% url 'tracker-home' %}">Task Tracker</a></h1>
+        
+        {% block add %}{% endblock %}
+
+    </div>
+
+    {% block content %}{% endblock %}
+    
+    <script src="{% static 'tracker/scripts.js' %}"></script>
+</body>
+</html>

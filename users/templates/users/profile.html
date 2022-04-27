@@ -1,0 +1,23 @@
+{% extends "tracker/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div id="profile-wrapper">
+        <img class="image-large" src=" {{ user.profile.image.url }} " alt="Your profile picture">
+        <div id="profile-name-wrapper">
+            <h1 class="profile-username">{{ user.username }}</h1>
+            <p class="profile-email">{{ user.email }}</p>
+        </div>
+        
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend>Profile Information</legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="register-button" type="submit">Update</button>
+        </div>
+    </form>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends "tracker/base.html" %}
+
+{% block add %}
+
+    <div class="banner-buttons">
+    </div>
+    <div class="login-logout-buttons">
+        {% if user.is_authenticated %}
+            <img class="user-home-photo" src=" {{ user.profile.image.url }} " alt="Your profile image.">
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+{% endblock add %}
+
+{% block content %}
+    <div id="assignment_boxes">
+        <div class="assignment_container">
+            <div class="assignment">
+                <h3>{{ object.title }}</h3>
+                <p>{{ object.description }}</p>
+                <h4>{{ object.due_date }}</h4>
+            </div>
+        </div>
+    </div>
+    <div id="edit-delete-buttons">
+        <a href="{% url 'post-update' object.id %}">
+            <button class="button-two">Edit</button>
+        </a>
+        <a href="{% url 'post-delete' object.id %}">
+            <button class="button-two">Delete</button>
+        </a>
+    </div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "tracker/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend>New Entry.</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="register-button" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+    <p>Form should be in this format: 2017-06-01T08:30 </p>
+{% endblock content %}
