@@ -9,9 +9,9 @@ Allows users to enter a task, task description, and due date. Orders the tasks i
 4. Open a web browser and navigate to http://127.0.0.1:8000/
 
 <picture>
-  <img alt="Home page for web application." src="./readmeimages/home_page.png">
+  <img alt="Home page for web application." src="/media/home_page.png">
 </picture>
 
 <picture>
-  <img alt="Home page for web application." src="./readmeimages/profile_page.png">
+  <img alt="Home page for web application." src="/media/profile_page.png">
 </picture>
