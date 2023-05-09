@@ -5,7 +5,8 @@ Allows users to enter a task, task description, and due date. Orders the tasks i
 ## How to run
 1. Clone this repository
 2. Download Django and Python if needed
-3. Run the server with "python3 manage.py runserver"
+3. Build the database with "python manage.py migrate"
+3. Run the server with "python manage.py runserver"
 4. Open a web browser and navigate to http://127.0.0.1:8000/
 
 ## Images
