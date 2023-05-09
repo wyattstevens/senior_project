@@ -8,6 +8,7 @@ Allows users to enter a task, task description, and due date. Orders the tasks i
 3. Run the server with "python3 manage.py runserver"
 4. Open a web browser and navigate to http://127.0.0.1:8000/
 
+## Images
 <picture>
   <img alt="Home page for web application." src="/media/home_page.png">
 </picture>
